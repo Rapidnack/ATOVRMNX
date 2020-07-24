@@ -1,6 +1,7 @@
 """atovrmnxparserモジュールから呼ばれるコマンド処理モジュール"""
-import vrmapi
 import re
+
+import vrmapi
 
 
 # '*****(***)'タイプのコマンドを探すパターン

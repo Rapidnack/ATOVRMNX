@@ -16,9 +16,10 @@
 import socket
 import threading
 import time
-import schedule
 import re
 import datetime
+
+import schedule
 
 
 class VRMCommunicationError(Exception):
@@ -34,7 +35,7 @@ class VRMInvalidParameterError(Exception):
 class Client(object):
     """VRM-NX用サーバーモジュールatovrmnxserverに接続するクライアントのクラス"""
 
-    _ATSEventHandlerName = 'vrmevent_userats'
+    _ATSEventHandlerName = 'vrmevent_serverats'
 
     def __init__(self):
         self._atsdict = {}
@@ -283,7 +284,6 @@ class _VRMObject(object):
     def __init__(self, client, id):
         self._client = client
         self._id = id
-        self._client._register(self)
 
     def send(self, command):
         """コマンド文字列をサーバーに送信する。
@@ -334,6 +334,8 @@ class ATS(_VRMObject):
         self._forwardleavesections = []
         self._reverseentersections = []
         self._reverseleavesections = []
+
+        client._register(self)
 
     def send(self, command):
         """'LAYOUT().GetATS(id).' + コマンド文字列をサーバーに送信する。
@@ -440,6 +442,8 @@ class Point(_VRMObject):
     def __init__(self, client, id):
         _VRMObject.__init__(self, client, id)
 
+        client._register(self)
+
     def send(self, command):
         """'LAYOUT().GetPoint(id).' + コマンド文字列をサーバーに送信する。
 
@@ -497,6 +501,8 @@ class Train(_VRMObject):
         self._startdistance = startdistance
         self._stopdistance = stopdistance
         self._voltage = voltage
+
+        client._register(self)
 
     def send(self, command):
         """'LAYOUT().GetTrain(id).' + コマンド文字列をサーバーに送信する。

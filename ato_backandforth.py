@@ -1,5 +1,6 @@
-import atovrmnxclient as vc
 import time
+
+import atovrmnxclient as vc
 
 
 client = vc.Client()

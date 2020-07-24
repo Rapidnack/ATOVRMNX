@@ -16,7 +16,7 @@
     import vrmapi
     import atovrmnxserver                                     <=== 追加
 
-    def vrmevent_userats(obj,ev,param):                       <=== 追加
+    def vrmevent_serverats(obj,ev,param):                     <=== 追加
         if ev == 'catch':                                     <=== 追加
             atovrmnxserver.process_ats_event(obj,ev,param)    <=== 追加
 
@@ -54,12 +54,14 @@
     例:
         'catch 79 40 1 1\n' 内容: VRMATS[79]、VRMTrain[40]、順方向、先頭車輪
 """
-import vrmapi
 import sys
 sys.path.append("C:\Python37\Lib")
 sys.path.append("C:\Python37\DLLs")
 sys.path.append("C:\Python37\Lib\site-packages")
 import socket
+
+import vrmapi
+
 import atovrmnxparser
 
 
@@ -84,6 +86,8 @@ _clienteventstream = None
 
 # VRM-NXにframeイベントの発生を依頼
 vrmapi.LAYOUT().SetEventFrame()
+
+vrmapi.LOG(f'{__name__} : ### Startup ###')
 
 
 def _closecommandsocket():
