@@ -8,8 +8,8 @@ client = vc.Client()
 
 ats1ii = vc.ATS(client, (79, 89, 99))
 ats1Ai = vc.ATS(client, (80, 90, 100))
-ats1Bi = vc.ATS(client, (81, 91, 101))
-ats1Ao = vc.ATS(client, (82, 92, 102))
+ats1Ao = vc.ATS(client, (81, 91, 101))
+ats1Bi = vc.ATS(client, (82, 92, 102))
 ats1Bo = vc.ATS(client, (83, 93, 103))
 ats1oo = vc.ATS(client, (84, 94, 104))
 ats2ii = vc.ATS(client, (85, 95, 105))
@@ -24,13 +24,13 @@ train1 = vc.Train(client, 39)
 train2 = vc.Train(client, 40)
 
 platform1A = vc.Platform((ats1Ai, ats1Ao), train=train1)
-platform1B = vc.Platform((ats1Bi, ats1Bo))
-platform2 = vc.Platform((ats2i, ats2o), train=train2)
+platform1B = vc.Platform((ats1Bi, ats1Bo), train=train2)
+platform2 = vc.Platform((ats2i, ats2o))
 
 section1A = vc.Section((None, ats1oo), train=train1)
-section1B = vc.Section((None, ats1oo))
+section1B = vc.Section((None, ats1oo), train=train2)
 section1_2 = vc.Section(((ats1Ao, ats1Bo), ats2i))
-section2 = vc.Section((ats2ii, ats2oo), train=train2)
+section2 = vc.Section((ats2ii, ats2oo))
 section2_1 = vc.Section((ats2o, (ats1Ai, ats1Bi)))
 
 
@@ -82,10 +82,10 @@ def timetable():
     
     timetabletext = """
 列車番号,駅１	,駅２	,駅１	,駅２	
-A0000	,00:00	,01:15	,01:45
-B0000	,	,00:00	,00:40	,01:45
-A0200	,02:00	,03:15	,03:45
-B0200	,      	,02:00	,02:40	,03:45
+A0000	,00:00	,00:40	,01:10
+B0015	,00:15	,01:20	,01:50
+A0200	,02:00	,02:40	,03:10
+B0215	,02:15	,---->	,03:35
 """
     stations = (station1, station2)
     vc.readtimetable(basetime, 4, timetabletext, stations, starttrain)   # 4分間隔で終日分繰り返し登録

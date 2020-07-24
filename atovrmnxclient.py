@@ -928,9 +928,10 @@ def cleartimetable(secondsago=5):
     """
     schedule.clear()
 
+    # 00秒から開始
     now = datetime.datetime.now()
     basetime = (now + datetime.timedelta(minutes=1)).replace(second=0)
-    if now.second >= 60 - secondsago:
+    if now.second >= 60 - secondsago: # 登録にsecondsago秒確保
         basetime = (now + datetime.timedelta(minutes=2)).replace(second=0)
     print(f'現在時刻: {now.strftime("%H:%M:%S")}')
     print(f'開始時刻: {basetime.strftime("%H:%M:%S")}')

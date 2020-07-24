@@ -6,8 +6,8 @@ client = vc.Client()
 
 ats1ii = vc.ATS(client, 79)
 ats1Ai = vc.ATS(client, 80)
-ats1Bi = vc.ATS(client, 81)
-ats1Ao = vc.ATS(client, 82)
+ats1Ao = vc.ATS(client, 81)
+ats1Bi = vc.ATS(client, 82)
 ats1Bo = vc.ATS(client, 83)
 ats2i = vc.ATS(client, 86)
 ats2o = vc.ATS(client, 87)
@@ -19,8 +19,8 @@ train1 = vc.Train(client, 39)
 train2 = vc.Train(client, 40)
 
 platform1A = vc.Platform((ats1Ai, ats1Ao), train=train1)
-platform1B = vc.Platform((ats1Bi, ats1Bo))
-platform2 = vc.Platform((ats2i, ats2o), restart=3, train=train2)
+platform1B = vc.Platform((ats1Bi, ats1Bo), train=train2)
+platform2 = vc.Platform((ats2i, ats2o), restart=3)
 
 
 def sequence1ii(train):
@@ -58,7 +58,7 @@ ats1Bi.forward = sequence1Bi
 def main():
     thread = client.connect()
 
-    platform2.start()
+    platform1A.start()
 
     thread.join()
     

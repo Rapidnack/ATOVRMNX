@@ -4,22 +4,22 @@ import time
 
 client = vc.Client()
 
-ats1Bi = vc.ATS(client, (81, 91, 101))
+ats1Ai = vc.ATS(client, (80, 90, 100))
+ats1Ao = vc.ATS(client, (81, 91, 101))
+ats2i = vc.ATS(client, (86, 96, 106))
 ats2o = vc.ATS(client, (87, 97, 107))
 
-point1 = vc.Point(client, 73)
+train1 = vc.Train(client, 39)
 
-train2 = vc.Train(client, 40)
-
-platform1B = vc.Platform((ats1Bi, None), restart=3)
-platform2 = vc.Platform((None, ats2o), restart=3, train=train2)
+platform1A = vc.Platform((ats1Ai, ats1Ao), restart=3, train=train1)
+platform2A = vc.Platform((ats2i, None), restart=3)
+platform2B = vc.Platform((None, ats2o), restart=3)
 
 
 def main():
     thread = client.connect()
 
-    point1.SetBranch(1)
-    platform2.start()
+    platform1A.start()
 
     thread.join()
     
