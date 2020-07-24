@@ -1,5 +1,3 @@
-import time
-
 import atovrmnxclient as vc
 
 
