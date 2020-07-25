@@ -5,7 +5,7 @@
         ATS: VRMATSに対応するクラス
         Point: VRMPointに対応するクラ
         Train: VRMTrainに対応するクラス
-        Platform: 駅のプラットフォームのクラス
+        Platform: 駅のプラットホームのクラス
         Section: 閉塞区間のクラス
         Station: プラットホームを管理する駅のクラス
 
@@ -661,21 +661,21 @@ class Train(_VRMObject):
 
 
 class Platform(object):
-    """駅のプラットフォームのクラス
+    """駅のプラットホームのクラス
 
     駅に管理されない場合、進入してきたすべての列車をゆっくり停車させる。
     駅に管理されている場合、駅のnumbersプロパティに列車番号が含まれる列車だけをゆっくり停車させる。
-    start()メソッドでプラットフォームに停車している列車をゆっくり発車させる。
+    start()メソッドでプラットホームに停車している列車をゆっくり発車させる。
 
     Args:
-        atses (tuple(ATS)): プラットフォームの両端のATSのタプル。
-            プラットフォームに入る向きのATS、出る向きのATSの順(□>、□>)。
+        atses (tuple(ATS)): プラットホームの両端のATSのタプル。
+            プラットホームに入る向きのATS、出る向きのATSの順(□>、□>)。
             終点で片側にしかATSがない場合は(□>、None)または(None、□>)のようにする。
             ATSの向きと反対に走行する列車にも対応しているので、単線の往復走行にも使用できる。
         restart (float): 停車した列車を指定秒数後ゆっくり発車。省略すると停車のまま。
         startdistance (float): 発車時の加速距離mm。
         stopdistance (float): 停車時の減速距離mm。
-        train (Train): 初期状態でプラットフォームに入っている列車。
+        train (Train): 初期状態でプラットホームに入っている列車。
         name (str): デバッグ用にprint()で表示する名前。
     """
 
@@ -705,13 +705,13 @@ class Platform(object):
         self._station = None
 
     def enter(self, train):
-        """プラットフォームに列車が停車したことにする。
+        """プラットホームに列車が停車したことにする。
 
-        プラットフォームに登録したATSにより自動的に呼ばれる。
-        引数でわたされた列車をこのプラットフォームに停車中の列車とする。
+        プラットホームに登録したATSにより自動的に呼ばれる。
+        引数でわたされた列車をこのプラットホームに停車中の列車とする。
 
         Args:
-            train (Train): プラットフォームに停車したことにする列車。
+            train (Train): プラットホームに停車したことにする列車。
         """
         self._lock.acquire()
         try:
@@ -722,18 +722,18 @@ class Platform(object):
             self._lock.release()
 
     def leave(self, train=None):
-        """プラットフォームから列車が発車したことにする。
+        """プラットホームから列車が発車したことにする。
 
-        プラットフォームに登録したATSにより自動的に呼ばれる。
-        このプラットフォームに停車中の列車は無しになる。
+        プラットホームに登録したATSにより自動的に呼ばれる。
+        このプラットホームに停車中の列車は無しになる。
         列車を指定した場合、指定した列車が停車中なら発車したことにする。
         列車を指定しない場合、どの列車が停車中でも発車したことにする。
 
         Args:
-            train (Train): プラットフォームから発車したことにする列車。
+            train (Train): プラットホームから発車したことにする列車。
 
         Returns:
-            Train: プラットフォームから発車したことにした列車。なければNoneを返す。
+            Train: プラットホームから発車したことにした列車。なければNoneを返す。
         """
         self._lock.acquire()
         try:
@@ -748,13 +748,13 @@ class Platform(object):
             self._lock.release()
 
     def start(self, train=None, distance=None, voltage=None):
-        """プラットフォームから列車を発車させる。
+        """プラットホームから列車を発車させる。
 
         列車を指定した場合、指定した列車が停車中なら発車させる。
         列車を指定しない場合、どの列車が停車中でも発車させる。
 
         Args:
-            train (Train): プラットフォームから発車させる列車。
+            train (Train): プラットホームから発車させる列車。
             distance (float): 発車時の加速距離。省略時はstartdistanceプロパティの値。
             voltage (float): 走行速度の電圧。省略時は列車のvoltageプロパティの値。
 
