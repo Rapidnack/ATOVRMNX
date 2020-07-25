@@ -53,7 +53,7 @@ class Client(object):
         """コマンド用とイベント用の２つのTCPソケットをサーバーに接続する。
 
         接続後イベント受信スレッドを開始する。
-        
+
         Args:
             address (str): サーバーアドレス。
             commandport (int): コマンド用TCPソケットのポート番号。
@@ -65,9 +65,9 @@ class Client(object):
         self._address = address
         self._commandport = commandport
         self._eventport = eventport
-        
+
         self.disconnect()
-        
+
         # コマンド用とイベント用の２つのTCPソケットをサーバーに接続
         self._opencommandsocket()
         self._openeventsocket()
@@ -158,7 +158,7 @@ class Client(object):
         if isinstance(vrmobject, ATS):
             self._atsdict[vrmobject.id] = vrmobject
 
-            id = vrmobject.id            
+            id = vrmobject.id
             if isinstance(id, tuple): # 一か所に複数のATSを使う場合
                 if len(id) < 2:
                     raise VRMInvalidParameterError('１つのATSだけの場合はタプルの代わりに整数で指定してください。')
@@ -198,7 +198,7 @@ class Client(object):
                 vrmobject.SetTrainNumber()
 
         else:
-            raise VRMInvalidParameterError('登録対象ではありません。')       
+            raise VRMInvalidParameterError('登録対象ではありません。')
 
     def _closecommandsocket(self):
         if self._commandsocket:
@@ -211,7 +211,7 @@ class Client(object):
             self._eventsocket.close()
             self._eventsocket = None
             self._eventstream = None
-        
+
     def _opencommandsocket(self):
         print(f'connecting to {self._address}:{self._commandport}')
         self._commandsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -219,7 +219,7 @@ class Client(object):
         self._commandsocket.connect((self._address, self._commandport))
         self._commandstream = self._commandsocket.makefile(mode='rw')
         print('connected')
-        
+
     def _openeventsocket(self):
         print(f'connecting to {self._address}:{self._eventport}')
         self._eventsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -257,7 +257,7 @@ class Client(object):
                 for ignoreatsid in preids:
                     if (ignoreatsid, trainid) in self._ignoreatslist:
                         self._ignoreatslist.remove((ignoreatsid, trainid))
-                return            
+                return
             if preids: # このATSより前の見逃したATSがあれば表示
                 print(f'{preids} ', end='')
             # 同じtrainidの項目は古いので_ignoreatslistから削除
@@ -325,11 +325,11 @@ class ATS(_VRMObject):
     def __init__(self, client, id):
         _VRMObject.__init__(self, client, id)
         self._forward = None
-        self._reverse = None        
+        self._reverse = None
         self._forwardenterplatforms = []
         self._forwardleaveplatforms = []
         self._reverseenterplatforms = []
-        self._reverseleaveplatforms = []        
+        self._reverseleaveplatforms = []
         self._forwardentersections = []
         self._forwardleavesections = []
         self._reverseentersections = []
@@ -350,7 +350,7 @@ class ATS(_VRMObject):
         else:
             s = f'LAYOUT().GetATS({self.id}).'
             _VRMObject.send(self, s + command)
-    
+
     def SetUserEventFunction(self, funcname):
         """vrmapiの同名APIを実行。"""
         s = f'SetUserEventFunction("{funcname}")\n'
@@ -363,29 +363,29 @@ class ATS(_VRMObject):
 
     def _forwardfunc(self, train):
         for platform in self._forwardleaveplatforms: # ホームからの退出は 閉塞区間待ちになる前
-            platform._leavesequence(train)            
+            platform._leavesequence(train)
         for section in self._forwardentersections: # 閉塞区間待ちになる可能性あり
             section.enter(train)
-            
+
         for section in self._forwardleavesections: # 閉塞区間の解放は列車が停止するまで待たない
             section.leave(train)
         for platform in self._forwardenterplatforms: # 列車が停止するまで待つ可能性あり
             platform._entersequence(train)
-            
+
         if self._forward:
             self._forward(train)
 
     def _reversefunc(self, train):
         for platform in self._reverseleaveplatforms: # ホームからの退出は 閉塞区間待ちになる前
-            platform._leavesequence(train)            
+            platform._leavesequence(train)
         for section in self._reverseentersections: # 閉塞区間待ちになる可能性あり
             section.enter(train)
-            
+
         for section in self._reverseleavesections: # 閉塞区間の解放は列車が停止するまで待たない
             section.leave(train)
         for platform in self._reverseenterplatforms: # 列車が停止するまで待つ可能性あり
             platform._entersequence(train)
-            
+
         if self._reverse:
             self._reverse(train)
 
@@ -416,7 +416,7 @@ class ATS(_VRMObject):
     def forward(self):
         """VRMATSオブジェクトの順方向の列車検出時に実行されるユーザー定義関数を取得・設定する。"""
         return self._forward
-    
+
     @forward.setter
     def forward(self, forward):
         self._forward = forward
@@ -425,7 +425,7 @@ class ATS(_VRMObject):
     def reverse(self):
         """VRMATSオブジェクトの逆方向の列車検出時に実行されるユーザー定義関数を取得・設定する。"""
         return self._reverse
-    
+
     @reverse.setter
     def reverse(self, reverse):
         self._reverse = reverse
@@ -621,7 +621,7 @@ class Train(_VRMObject):
     def number(self):
         """VRMTrainの列車番号の文字列を取得・設定する。"""
         return self._number
-    
+
     @number.setter
     def number(self, number):
         self._number = number
@@ -631,7 +631,7 @@ class Train(_VRMObject):
     def startdistance(self):
         """start()のデフォルト加速距離mmを取得・設定する。"""
         return self._distance
-    
+
     @startdistance.setter
     def startdistance(self, startdistance):
         self._startdistance = startdistance
@@ -640,7 +640,7 @@ class Train(_VRMObject):
     def stopdistance(self):
         """stop()のデフォルト減速距離mmを取得・設定する。"""
         return self._distance
-    
+
     @stopdistance.setter
     def stopdistance(self, stopdistance):
         self._stopdistance = stopdistance
@@ -652,13 +652,13 @@ class Train(_VRMObject):
         走行中なら列車の電圧も即時変更する。
         """
         return self._voltage
-    
+
     @voltage.setter
     def voltage(self, voltage):
         self._voltage = voltage
         if self.GetVoltage() >= 0.01:
             self.start()
-    
+
 
 class Platform(object):
     """駅のプラットフォームのクラス
@@ -688,11 +688,11 @@ class Platform(object):
         if isinstance(self._atses[1], ATS):
             self._atses[1]._forwardleaveplatforms.append(self)
             self._atses[1]._reverseenterplatforms.append(self)
-            
+
         self._startdistance = startdistance
         self._stopdistance = stopdistance
-        
-        self._train = None        
+
+        self._train = None
         self._lock = threading.Lock()
         if isinstance(train, Train):
             self._lock.acquire()
@@ -700,7 +700,7 @@ class Platform(object):
                 self._train = train
             finally:
                 self._lock.release()
-                
+
         self._name = name
         self._station = None
 
@@ -709,7 +709,7 @@ class Platform(object):
 
         プラットフォームに登録したATSにより自動的に呼ばれる。
         引数でわたされた列車をこのプラットフォームに停車中の列車とする。
-        
+
         Args:
             train (Train): プラットフォームに停車したことにする列車。
         """
@@ -728,7 +728,7 @@ class Platform(object):
         このプラットフォームに停車中の列車は無しになる。
         列車を指定した場合、指定した列車が停車中なら発車したことにする。
         列車を指定しない場合、どの列車が停車中でも発車したことにする。
-        
+
         Args:
             train (Train): プラットフォームから発車したことにする列車。
 
@@ -828,7 +828,7 @@ class Section(object):
 
         閉塞区間が空ならそのまま走行。処理は呼び出し側に戻る。
         空でないなら空になるまで停車して待つ。処理も空になるまで戻らない。
-        
+
         Args:
             train (Train): 閉塞区間に進入する列車。
         """
@@ -844,7 +844,7 @@ class Section(object):
 
         列車を指定した場合、指定した列車が在るときだけを閉塞区間から退出させる。
         列車を指定しない場合、どの列車が在っても閉塞区間から退出させる。
-        
+
         Args:
             train (Train): 閉塞区間から退出する列車。
 
@@ -907,7 +907,7 @@ class Station(object):
     def name(self):
         """駅名を取得・設定する。"""
         return self._name
-    
+
     @name.setter
     def name(self, name):
         self._name = name
@@ -956,8 +956,8 @@ def readtimetable(basetime, minutes, timetable, stations, starttrain):
 
     下記フォーマットの文字列を解釈して、各駅の発車時刻をscheduleモジュールに登録する。
     また、駅に停車させる列車番号を各駅のnumbersプロパティに追加する。
-    
-        列車番号,駅１	,駅２	,駅１	,駅２	
+
+        列車番号,駅１	,駅２	,駅１	,駅２
         A0000	,00:00	,00:40	,01:00
         B0000	,	,00:00	,01:20	,01:50
         A0200	,02:00	,---->	,03:10
@@ -967,7 +967,7 @@ def readtimetable(basetime, minutes, timetable, stations, starttrain):
         例:
             00:00 => 09:20:00, 09:24:00, ..., 23:56:00, 00:00:00, ..., 09:12:00, 09:16:00
             00:40 => 09:20:40, 09:24:40, ..., 23:56:40, 00:00:40, ..., 09:12:40, 09:16:40
-    
+
     Args:
         basetime (datetime.datetime): 自動運転の開始時刻。
         minutes (int): 時刻表の文字列に記述されている分数。

@@ -51,7 +51,7 @@ def trainnumbertotrain(trainnumber):
     elif trainnumber[0] == 'B':
         return train2
     else:
-        return None   
+        return None
 
 
 station1 = vc.Station('駅１', (platform1A, platform1B), trainnumbertotrain)
@@ -68,7 +68,7 @@ def timetable():
             print(f'{datetime.datetime.now()}: [{station.name}]に[{trainnumber}]不在')
 
     timetabletext = """
-列車番号,駅１	,駅２	,駅１	,駅２	
+列車番号,駅１	,駅２	,駅１	,駅２
 A0000	,00:00	,00:40	,01:10
 B0040	,00:40	,01:20	,01:50
 A0200	,02:00	,---->	,03:00
@@ -90,18 +90,18 @@ B0240	,02:40	,03:20	,03:50
     while True:
         starttrain(station1, 'A0000')
         time.sleep(40)
-        starttrain(station2, 'A0000')        
-        starttrain(station1, 'B0040')        
+        starttrain(station2, 'A0000')
+        starttrain(station1, 'B0040')
         time.sleep(40)
-        starttrain(station2, 'B0040')        
-        time.sleep(40)        
+        starttrain(station2, 'B0040')
+        time.sleep(40)
         starttrain(station1, 'A0200')
         time.sleep(40)
         # A0200駅２通過
-        starttrain(station1, 'B0240')        
-        time.sleep(40)        
+        starttrain(station1, 'B0240')
+        time.sleep(40)
         starttrain(station2, 'B0240')
-        time.sleep(40)        
+        time.sleep(40)
 
 
 def main():
@@ -110,7 +110,7 @@ def main():
     client.startthread(timetable)
 
     thread.join()
-    
+
 
 if __name__ == '__main__':
     main()

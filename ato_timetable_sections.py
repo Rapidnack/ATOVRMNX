@@ -64,7 +64,7 @@ def trainnumbertotrain(trainnumber):
     elif trainnumber[0] == 'B':
         return train2
     else:
-        return None   
+        return None
 
 
 station1 = vc.Station('駅１', (platform1A, platform1B), trainnumbertotrain)
@@ -81,9 +81,9 @@ def timetable():
             print(f'{datetime.datetime.now()}: [{station.name}]に[{trainnumber}]不在')
 
     basetime = vc.cleartimetable()
-    
+
     timetabletext = """
-列車番号,駅１	,駅２	,駅１	,駅２	
+列車番号,駅１	,駅２	,駅１	,駅２
 A0000	,00:00	,00:40	,01:10
 B0015	,00:15	,01:20	,01:50
 A0200	,02:00	,02:40	,03:10
@@ -91,7 +91,7 @@ B0215	,02:15	,---->	,03:35
 """
     stations = (station1, station2)
     vc.readtimetable(basetime, 4, timetabletext, stations, starttrain)   # 4分間隔で終日分繰り返し登録
-    
+
     while True:
         schedule.run_pending()
         time.sleep(1)
@@ -103,7 +103,7 @@ def main():
     client.startthread(timetable)
 
     thread.join()
-    
+
 
 if __name__ == '__main__':
     main()

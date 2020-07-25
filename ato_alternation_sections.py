@@ -48,7 +48,7 @@ def sequence1Ao(train):
 
 def sequence1Bo(train):
     point2.SetBranch(1)
-        
+
 
 def sequence1Ai(train):
     time.sleep(3)
@@ -69,7 +69,7 @@ def main():
     platform1A.start()
 
     thread.join()
-    
+
 
 if __name__ == '__main__':
     main()

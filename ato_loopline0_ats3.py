@@ -27,7 +27,7 @@ def main():
     train1.start(400)
 
     thread.join()
-    
+
 
 if __name__ == '__main__':
     main()

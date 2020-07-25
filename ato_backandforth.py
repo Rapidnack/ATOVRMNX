@@ -21,7 +21,7 @@ def main():
     platform1A.start()
 
     thread.join()
-    
+
 
 if __name__ == '__main__':
     main()

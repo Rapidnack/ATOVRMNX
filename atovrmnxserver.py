@@ -133,7 +133,7 @@ def process_layout_event(obj, ev, param):
 
     VRM-NXのレイアウトスクリプトに記述したvrmevent()から呼ばれる。
 
-    """    
+    """
     global _servercommandsocket, _clientcommandsocket, _clientcommandstream
     global _servereventsocket, _clienteventsocket, _clienteventstream
 
@@ -147,7 +147,7 @@ def process_layout_event(obj, ev, param):
             _clientcommandsocket = newclientsocket
             _clientcommandstream = _clientcommandsocket.makefile(mode='rw')
         except (BlockingIOError, socket.error):
-            pass                
+            pass
         # イベント用ソケットへの接続を受け付ける。
         # 接続要求が無いときはBlockingIOError発生で次の処理に進む。
         try:
@@ -174,7 +174,7 @@ def process_layout_event(obj, ev, param):
                         response = atovrmnxparser.execvrmapi(command)
                     except Exception as e:
                         vrmapi.LOG(f'execvrmapi("{command}"): {e}')
-                    
+
                     if response:
                         #vrmapi.LOG(f'response:{response}')
                         try:

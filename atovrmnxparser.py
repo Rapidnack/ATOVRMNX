@@ -30,7 +30,7 @@ def execvrmapi(command):
     m = _pat4.search(command)
     if m:
         cmd = f'{m.group(1)}().{m.group(3)}().{m.group(5)}().{m.group(7)}()'
-        
+
         vrmapi.LOG(f'サーバー未実装: {command}')
         return None
 
@@ -62,14 +62,14 @@ def execvrmapi(command):
             if m.group(2) != '': return None
             point = int(m.group(4))
             branch = int(m.group(6))
-            vrmapi.LAYOUT().GetPoint(point).SetBranch(branch)    
+            vrmapi.LAYOUT().GetPoint(point).SetBranch(branch)
             return None
 
         elif cmd == 'LAYOUT().GetPoint().SwitchBranch()':
             if m.group(2) != '': return None
             point = int(m.group(4))
             if m.group(6) != '': return None
-            vrmapi.LAYOUT().GetPoint(point).SwitchBranch()    
+            vrmapi.LAYOUT().GetPoint(point).SwitchBranch()
             return None
 
         elif cmd == 'LAYOUT().GetTrain().AutoSpeedCTRL()':
@@ -78,7 +78,7 @@ def execvrmapi(command):
             lst = m.group(6).split(',')
             distance = float(lst[0].strip())
             voltage = float(lst[1].strip())
-            vrmapi.LAYOUT().GetTrain(train).AutoSpeedCTRL(distance, voltage)    
+            vrmapi.LAYOUT().GetTrain(train).AutoSpeedCTRL(distance, voltage)
             return None
 
         elif cmd == 'LAYOUT().GetTrain().GetDirection()':
@@ -99,35 +99,35 @@ def execvrmapi(command):
             lst = m.group(6).split(',')
             sec = float(lst[0].strip())
             voltage = float(lst[1].strip())
-            vrmapi.LAYOUT().GetTrain(train).SetTimerVoltage(sec, voltage)    
+            vrmapi.LAYOUT().GetTrain(train).SetTimerVoltage(sec, voltage)
             return None
 
         elif cmd == 'LAYOUT().GetTrain().SetTrainCode()':
             if m.group(2) != '': return None
             train = int(m.group(4))
             code = int(m.group(6))
-            vrmapi.LAYOUT().GetTrain(train).SetTrainCode(code)    
+            vrmapi.LAYOUT().GetTrain(train).SetTrainCode(code)
             return None
 
         elif cmd == 'LAYOUT().GetTrain().SetTrainNumber()':
             if m.group(2) != '': return None
             train = int(m.group(4))
             number = m.group(6)[1:-1]
-            vrmapi.LAYOUT().GetTrain(train).SetTrainNumber(number)    
+            vrmapi.LAYOUT().GetTrain(train).SetTrainNumber(number)
             return None
 
         elif cmd == 'LAYOUT().GetTrain().SetVoltage()':
             if m.group(2) != '': return None
             train = int(m.group(4))
             voltage = float(m.group(6))
-            vrmapi.LAYOUT().GetTrain(train).SetVoltage(voltage)    
+            vrmapi.LAYOUT().GetTrain(train).SetVoltage(voltage)
             return None
 
         elif cmd == 'LAYOUT().GetTrain().Turn()':
             if m.group(2) != '': return None
             train = int(m.group(4))
             if m.group(6) != '': return None
-            vrmapi.LAYOUT().GetTrain(train).Turn()    
+            vrmapi.LAYOUT().GetTrain(train).Turn()
             return None
 
         vrmapi.LOG(f'サーバー未実装: {command}')
@@ -136,7 +136,7 @@ def execvrmapi(command):
     m = _pat2.search(command)
     if m:
         cmd = f'{m.group(1)}().{m.group(3)}()'
-        
+
         vrmapi.LOG(f'サーバー未実装: {command}')
         return None
 
@@ -150,7 +150,7 @@ def execvrmapi(command):
             voltage = float(lst[1].strip())
             train = _activetrain()
             if train is None: return None
-            train.AutoSpeedCTRL(distance, voltage)    
+            train.AutoSpeedCTRL(distance, voltage)
             return None
 
         elif cmd == 'GetDirection()':
@@ -177,21 +177,21 @@ def execvrmapi(command):
             voltage = float(lst[1].strip())
             train = _activetrain()
             if train is None: return None
-            train.SetTimerVoltage(sec, voltage)    
+            train.SetTimerVoltage(sec, voltage)
             return None
 
         elif cmd == 'SetVoltage()':
             voltage = float(m.group(2))
             train = _activetrain()
             if train is None: return None
-            train.SetVoltage(voltage)    
+            train.SetVoltage(voltage)
             return None
 
         elif cmd == 'Turn()':
             if m.group(2) != '': return None
             train = _activetrain()
             if train is None: return None
-            train.Turn()    
+            train.Turn()
             return None
 
         vrmapi.LOG(f'サーバー未実装: {command}')
