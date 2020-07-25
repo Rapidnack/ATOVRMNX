@@ -5,9 +5,9 @@
         sys.path.append("C:\Python37\Lib")
         sys.path.append("C:\Python37\DLLs")
         sys.path.append("C:\Python37\Lib\site-packages")
-    （動作確認にはVRM-NXと同じPython3.7.3を使用しました。）
+    （動作確認にはPython3.7.3とPython3.7.8を使用しました。）
 
-２．次の２つのファイルをレイアウトファイルと同じフォルダーに配置してください。
+２．次の２つのモジュールをレイアウトファイルと同じフォルダに配置してください。
     atovrmnxparser.py
     atovrmnxserver.py（このモジュール）
 
