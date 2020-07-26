@@ -246,9 +246,7 @@ class Client(object):
 
         value = self._sequencedict[key]
         if isinstance(value, tuple):
-            ats = value[0]
-            preids = value[1]
-            postids = value[2]
+            ats, preids, postids = value
 
             if (atsid, trainid) in self._ignoreatslist:
                 # このATSの項目を_ignoreatslistから削除
