@@ -10,8 +10,8 @@
         Station: プラットホームを管理する駅のクラス
 
     関数:
-        cleartimetable(): sucheduleモジュールをクリアして発車時刻の登録準備をする。
-        readtimetable(): 時刻表の文字列を解釈して各駅の発車時刻をsucheduleモジュールに登録する。
+        cleartimetable(): scheduleパッケージをクリアして発車時刻の登録準備をする。
+        readtimetable(): 時刻表の文字列を解釈して各駅の発車時刻をscheduleパッケージに登録する。
 """
 import socket
 import threading
@@ -924,7 +924,7 @@ class Station(object):
 
 
 def cleartimetable(secondsago=5):
-    """sucheduleモジュールをクリアして自動運転の開始時刻を返す。
+    """scheduleパッケージをクリアして自動運転の開始時刻を返す。
 
         Args:
             secondsago (float): 自動運転の開始時刻の何秒前に登録するか。
@@ -952,9 +952,9 @@ def cleartimetable(secondsago=5):
 
 
 def readtimetable(basetime, minutes, timetable, stations, starttrain):
-    """時刻表の文字列を解釈して各駅の発車時刻をsucheduleモジュールに登録する。
+    """時刻表の文字列を解釈して各駅の発車時刻をscheduleパッケージに登録する。
 
-    下記フォーマットの文字列を解釈して、各駅の発車時刻をscheduleモジュールに登録する。
+    下記フォーマットの文字列を解釈して、各駅の発車時刻をscheduleパッケージに登録する。
     また、駅に停車させる列車番号を各駅のnumbersプロパティに追加する。
 
         列車番号,駅１	,駅２	,駅１	,駅２
