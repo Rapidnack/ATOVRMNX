@@ -371,7 +371,10 @@ class ATS(_VRMObject):
             platform._entersequence(train)
 
         if self._forward:
-            self._forward(train)
+            if isinstance(self._forward, tuple):
+                self._forward[0](train, *self._forward[1:])
+            else:
+                self._forward(train)
 
     def _reversefunc(self, train):
         for platform in self._reverseleaveplatforms: # ホームからの退出は 閉塞区間待ちになる前
@@ -385,7 +388,10 @@ class ATS(_VRMObject):
             platform._entersequence(train)
 
         if self._reverse:
-            self._reverse(train)
+            if isinstance(self._reverse, tuple):
+                self._reverse[0](train, *self._reverse[1:])
+            else:
+                self._reverse(train)
 
     def _startsequence(self, event, direction, train):
         """列車検出時にクライアントオブジェクトから実行される。"""
@@ -395,7 +401,10 @@ class ATS(_VRMObject):
             or self._forward:
                 print(event, end='')
                 if self._forward:
-                    print(f' {self._forward.__name__}', end='')
+                    if isinstance(self._forward, tuple):
+                        print(f' {self._forward[0].__name__}', end='')
+                    else:
+                        print(f' {self._forward.__name__}', end='')
                 print()
                 thread = threading.Thread(target=self._forwardfunc, args=(train,), daemon=True)
                 thread.start()
@@ -405,14 +414,20 @@ class ATS(_VRMObject):
             or self._reverse:
                 print(event, end='')
                 if self._reverse:
-                    print(f' {self._reverse.__name__}', end='')
+                    if isinstance(self._reverse, tuple):
+                        print(f' {self._reverse[0].__name__}', end='')
+                    else:
+                        print(f' {self._reverse.__name__}', end='')
                 print()
                 thread = threading.Thread(target=self._reversefunc, args=(train,), daemon=True)
                 thread.start()
 
     @property
     def forward(self):
-        """VRMATSオブジェクトの順方向の列車検出時に実行されるユーザー定義関数を取得・設定する。"""
+        """VRMATSオブジェクトの順方向の列車検出時に実行されるユーザー定義関数を取得・設定する。
+
+        引数を渡すときは(ユーザー定義関数, arg1, arg2, ...)のようなタプルを設定する。
+        """
         return self._forward
 
     @forward.setter
@@ -421,7 +436,10 @@ class ATS(_VRMObject):
 
     @property
     def reverse(self):
-        """VRMATSオブジェクトの逆方向の列車検出時に実行されるユーザー定義関数を取得・設定する。"""
+        """VRMATSオブジェクトの逆方向の列車検出時に実行されるユーザー定義関数を取得・設定する。
+
+        引数を渡すときは(ユーザー定義関数, arg1, arg2, ...)のようなタプルを設定する。
+        """
         return self._reverse
 
     @reverse.setter
