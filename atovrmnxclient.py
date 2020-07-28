@@ -696,7 +696,6 @@ class Platform(object):
     """
 
     def __init__(self, atses, restart=None, startdistance=400, stopdistance=550, train=None, name=None):
-        self._restart = restart
         self._atses = atses
         if isinstance(self._atses[0], ATS):
             self._atses[0]._forwardenterplatforms.append(self)
@@ -705,6 +704,7 @@ class Platform(object):
             self._atses[1]._forwardleaveplatforms.append(self)
             self._atses[1]._reverseenterplatforms.append(self)
 
+        self._restart = restart
         self._startdistance = startdistance
         self._stopdistance = stopdistance
 
@@ -895,9 +895,11 @@ class Station(object):
 
     def __init__(self, name, platforms, numbertotrain):
         self._name = name
+
         self._platforms = platforms
         for platform in self._platforms:
             platform._station = self
+
         self._numbertotrain = numbertotrain
         self._numbers = []
 
