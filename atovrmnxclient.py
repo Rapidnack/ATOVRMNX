@@ -634,6 +634,16 @@ class Train(_VRMObject):
                 break
 
     @property
+    def code(self):
+        """VRMTrainの種別コードを取得・設定する。"""
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        self._code = code
+        self.SetTrainCode()
+
+    @property
     def number(self):
         """VRMTrainの列車番号の文字列を取得・設定する。"""
         return self._number
@@ -679,8 +689,9 @@ class Train(_VRMObject):
 class Platform(object):
     """駅のプラットホームのクラス
 
-    駅に管理されない場合、進入してきたすべての列車をゆっくり停車させる。
-    駅に管理されている場合、駅のnumbersプロパティに列車番号が含まれる列車だけをゆっくり停車させる。
+    codesプロパティが空な場合、進入してきたすべての列車をゆっくり停車させる。
+    codesプロパティが空でない場合、codesプロパティに種別コードが含まれる列車と種別コードの無い列車だけをゆっくり停車させる。
+    駅に管理されている場合、駅のnumbersプロパティに列車番号が含まれる列車と列車番号の無い列車だけをゆっくり停車させる。
     start()メソッドでプラットホームに停車している列車をゆっくり発車させる。
 
     Args:
@@ -718,6 +729,7 @@ class Platform(object):
                 self._lock.release()
 
         self._name = name
+        self._codes = []
         self._station = None
 
     def enter(self, train):
@@ -785,17 +797,28 @@ class Platform(object):
         return t
 
     def _entersequence(self, train):
-        if self._station is None or train.number in self._station.numbers:
-            train.stop(self._stopdistance)
-            self.enter(train)
-            if None in self._atses: # 行き止まり
-                train.Turn()
-            if self._restart is not None:
-                time.sleep(self._restart)
-                self.start(train)
+        if self._station is None:
+            if self._codes:
+                if train.code is not None and train.code not in self._codes:
+                    return # 通過
+        else:
+            if train.number is not None and train.number not in self._station.numbers:
+                return # 通過
+        train.stop(self._stopdistance)
+        self.enter(train)
+        if None in self._atses: # 行き止まり
+            train.Turn()
+        if self._restart is not None:
+            time.sleep(self._restart)
+            self.start(train)
 
     def _leavesequence(self, train):
         self.leave(train)
+
+    @property
+    def codes(self):
+        """プラットホームに停車させる種別コードのリストを取得する。"""
+        return self._codes
 
 
 class Section(object):
