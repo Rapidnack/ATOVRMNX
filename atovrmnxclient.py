@@ -824,7 +824,6 @@ class Platform(object):
 class Section(object):
     """閉塞区間のクラス
 
-
     Args:
         atses (tuple(ATS)): 閉塞区間の両端のATSのタプル。
             閉塞区間に入る向きのATS、出る向きのATSの順(□>、□>)。
