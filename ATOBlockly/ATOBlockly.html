@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ATO Blockly</title>
+    <script src="blockly_compressed.js"></script>
+    <script src="blocks_compressed.js"></script>
+    <script src="msg/js/ja.js"></script>
+    <script src="javascript_compressed.js"></script>
+    <script src="atovrmnx_blocks.js"></script>
+    <script src="atovrmnx_flyouts.js"></script>
+    <script src="atovrmnx_javascript.js"></script>
+    <script src="atovrmnxclient.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+    table {
+      height: 100%;
+      width: 100%;
+    }
+    #blocklyArea {
+      height: 99%;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <button id="saveButton">保存</button>
+        <input id="files" type="file" accept=".xml" />
+        <button id="clearButton">クリア</button>
+      </td>
+      <td align="right">
+        <button id="convertButton">　　変換　　</button>
+        <button id="executeButton">　　実行　　</button>
+        <button id="stopButton">　　停止　　</button>
+      </td>
+    </tr>
+    <tr>
+      <td id="blocklyArea" colspan="2">
+      </td>
+    </tr>
+  </table>
+
+  <div id="blocklyDiv" style="position: absolute"></div>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="列車" colour="#5b80a5" custom="TRAIN"></category>
+  <category name="ポイント" colour="#5ba55b" custom="POINT"></category>
+  <category name="ATS" colour="#5b67a5" custom="ATS"></category>
+  <category name="プラットホーム" colour="#5ba58c" custom="PLATFORM"></category>
+  <category name="閉塞区間" colour="#745ba5" custom="SECTION"></category>
+  <category name="その他" colour="#a5745b">
+    <block type="main_function">
+      <field name="ADDRESS">127.0.0.1</field>
+    </block>
+    <block type="sleep_seconds">
+      <value name="SECONDS">
+        <shadow type="math_number">
+          <field name="NUM">3</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="論理" colour="#5b80a5">
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block type="logic_null"></block>
+    <block type="logic_ternary"></block>
+  </category>
+  <category name="繰り返し" colour="#5ba55b">
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_whileUntil">
+      <field name="MODE">WHILE</field>
+    </block>
+    <block type="controls_for">
+      <field name="VAR" id="_KKx|@q%oULe#@VA%18D">i</field>
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach">
+      <field name="VAR" id="p:yKlFFEld=|cj-K)BZ.">j</field>
+    </block>
+    <block type="controls_flow_statements">
+      <field name="FLOW">BREAK</field>
+    </block>
+  </category>
+  <category name="数学" colour="#5b67a5">
+    <block type="math_number">
+      <field name="NUM">0</field>
+    </block>
+    <block type="math_arithmetic">
+      <field name="OP">ADD</field>
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <field name="OP">ROOT</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <field name="OP">SIN</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant">
+      <field name="CONSTANT">PI</field>
+    </block>
+    <block type="math_number_property">
+      <mutation divisor_input="false"></mutation>
+      <field name="PROPERTY">EVEN</field>
+      <value name="NUMBER_TO_CHECK">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_round">
+      <field name="OP">ROUND</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">3.1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_on_list">
+      <mutation op="SUM"></mutation>
+      <field name="OP">SUM</field>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constrain">
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">50</field>
+        </shadow>
+      </value>
+      <value name="LOW">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="HIGH">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_int">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_float"></block>
+  </category>
+  <category name="テキスト" colour="#5ba58c">
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
+    <block type="text_append">
+      <field name="VAR" id="^tIjt%CsGICSUWgbKUT0">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_isEmpty">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="6/N9%*mDLg;Ex%R7f0^3">text</field>
+        </block>
+      </value>
+      <value name="FIND">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="6/N9%*mDLg;Ex%R7f0^3">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="6/N9%*mDLg;Ex%R7f0^3">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_changeCase">
+      <field name="CASE">UPPERCASE</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="リスト" colour="#745ba5">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with">
+      <mutation items="3"></mutation>
+    </block>
+    <block type="lists_repeat">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="3lhIaHJYarhGPy%NJh56">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <mutation statement="false" at="true"></mutation>
+      <field name="MODE">GET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="3lhIaHJYarhGPy%NJh56">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <mutation at="true"></mutation>
+      <field name="MODE">SET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="3lhIaHJYarhGPy%NJh56">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="3lhIaHJYarhGPy%NJh56">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <mutation mode="SPLIT"></mutation>
+      <field name="MODE">SPLIT</field>
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort">
+      <field name="TYPE">NUMERIC</field>
+      <field name="DIRECTION">1</field>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="変数" colour="#a55b80" custom="VARIABLE"></category>
+  <category name="関数" colour="#995ba5" custom="PROCEDURE"></category>
+</xml>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+  <block type="main_function" id="0zOzi@/V!n22`_fv+D*[" x="200" y="200">
+    <field name="ADDRESS">127.0.0.1</field>
+  </block>
+</xml>
+
+<script>
+  var toolbox = document.getElementById("toolbox");
+  var options = { 
+	toolbox : toolbox, 
+	collapse : true, 
+	comments : true, 
+	disable : true, 
+	maxBlocks : Infinity, 
+	trashcan : true, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	media : './media/', 
+	rtl : false, 
+	scrollbars : true, 
+	sounds : false, 
+	oneBasedIndex : true, 
+	grid : {
+		spacing : 20, 
+		length : 1, 
+		colour : '#888', 
+		snap : false
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : false, 
+		startScale : 1, 
+		maxScale : 3, 
+		minScale : 0.3, 
+		scaleSpeed : 1.2
+	}
+  };
+
+  var blocklyArea = document.getElementById('blocklyArea');
+  var blocklyDiv = document.getElementById('blocklyDiv');
+  var workspace = Blockly.inject(blocklyDiv, options);
+  var onresize = function(e) {
+    // Compute the absolute coordinates and dimensions of blocklyArea.
+    var element = blocklyArea;
+    var x = 0;
+    var y = 0;
+    do {
+      x += element.offsetLeft;
+      y += element.offsetTop;
+      element = element.offsetParent;
+    } while (element);
+    // Position blocklyDiv over blocklyArea.
+    blocklyDiv.style.left = x + 'px';
+    blocklyDiv.style.top = y + 'px';
+    blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+    blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+    Blockly.svgResize(workspace);
+  };
+  window.addEventListener('resize', onresize, false);
+  onresize();
+  Blockly.svgResize(workspace);
+
+  var workspaceBlocks = document.getElementById("workspaceBlocks"); 
+  Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+
+
+  // 列車、ポイント、ATS、プラットホーム、閉塞区間のポップアップメニューを登録する
+  registerMyFlyouts(workspace);
+
+
+  function clearFileSelection() {
+    currentLoaded = null;
+    var obj = document.getElementById('files');
+    obj.value = '';
+  }
+
+  document.getElementById("saveButton").onclick = function() {
+    var fileName = prompt('ファイル名を入力してください。', 'ato_blocks.xml');
+    if (fileName == null)
+      return;
+
+    fileName = fileName.trim();
+    if (fileName.length == 0) {
+      fileName = 'ato_blocks.xml';
+    }
+    if (!fileName.toLowerCase().endsWith('.xml')) {
+      fileName += '.xml';
+    }
+
+    var xml = Blockly.Xml.workspaceToDom(workspace);
+    var xml_text = Blockly.Xml.domToText(xml);
+    var blob = new Blob([xml_text], {type:"text/xml"});
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
+  };
+
+  document.getElementById("files").onchange = function() {
+    var obj = document.getElementById('files');
+    if (obj.value == '')
+      return;
+    var reader = new FileReader();
+    reader.readAsText(obj.files[0]);
+    reader.onload = function(ev) {
+      currentLoaded = reader.result;
+      var xml = Blockly.Xml.textToDom(currentLoaded);
+      workspace.clear();
+      Blockly.Xml.domToWorkspace(xml, workspace);
+      addTrainVariables();
+    };
+  };
+
+  document.getElementById("clearButton").onclick = function() {
+    clearFileSelection();
+    workspace.clear();
+    var workspaceBlocks = document.getElementById("workspaceBlocks"); 
+    Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+    addTrainVariables();
+  };
+
+  function convertToJavaScript() {
+    Blockly.JavaScript.addReservedWords('code');
+    var code = Blockly.JavaScript.workspaceToCode(workspace);
+    if (code.startsWith('var ')) {
+      var n = code.indexOf(';');
+      var varPart = code.substring(4, n);
+      var mainPart = '\n' + code.substring(n + 1, code.length).trimStart();
+      var varList = varPart.split(',');
+
+      var atsList = workspace.getVariablesOfType('ATS');
+      var atsNameList = [];
+      for (var ats of atsList) {
+        var name = Blockly.JavaScript.variableDB_.getName(ats.name, 'ATS');
+        atsNameList.push(name);
+      }
+      var pointList = workspace.getVariablesOfType('Point');
+      var pointNameList = [];
+      for (var point of pointList) {
+        var name = Blockly.JavaScript.variableDB_.getName(point.name, 'Point');
+        pointNameList.push(name);
+      }
+      var trainList = workspace.getVariablesOfType('Train');
+      var trainNameList = [];
+      for (var train of trainList) {
+        var name = Blockly.JavaScript.variableDB_.getName(train.name, 'Train');
+        trainNameList.push(name);
+      }
+      var platformList = workspace.getVariablesOfType('Platform');
+      var platformNameList = [];
+      for (var platform of platformList) {
+        var name = Blockly.JavaScript.variableDB_.getName(platform.name, 'Platform');
+        platformNameList.push(name);
+      }
+      var sectionList = workspace.getVariablesOfType('Section');
+      var sectionNameList = [];
+      for (var section of sectionList) {
+        var name = Blockly.JavaScript.variableDB_.getName(section.name, 'Section');
+        sectionNameList.push(name);
+      }
+
+      var outVarList = [];
+      var outNewStr = '';
+      for (var v of varList) {
+        var name = v.trim();
+        if (atsNameList.includes(name)) {
+          outNewStr += 'var ' + name + ' = new ATS(_client);\n';
+        } else if (pointNameList.includes(name)) {
+          outNewStr += 'var ' + name + ' = new Point(_client);\n';
+        } else if (trainNameList.includes(name)) {
+          outNewStr += 'var ' + name + ' = new Train(_client);\n';
+        } else if (platformNameList.includes(name)) {
+          outNewStr += 'var ' + name + ' = new Platform();\n';
+        } else if (sectionNameList.includes(name)) {
+          outNewStr += 'var ' + name + ' = new Section();\n';
+        } else {
+          outVarList.push(name);
+        }
+      }
+
+      if (outVarList.length == 0) {
+        outVarStr = '';
+      } else {
+        outVarStr = 'var ' + outVarList.join(', ') + ';\n';
+      }
+      code = outNewStr + outVarStr + mainPart + '\nawait _main();\n';
+    } else {
+      code = code + '\nawait _main();\n';
+    }
+
+    var lines = code.split('\n');
+    for (var i = 0; i < lines.length; i++) {
+        if (lines[i].startsWith('function ')) {
+            lines[i] = 'async ' + lines[i];
+        }
+    }
+    code = lines.join('\n');
+
+    return code;
+  }
+
+  document.getElementById("convertButton").onclick = function() {
+    Blockly.JavaScript.STATEMENT_PREFIX = '';
+    code = convertToJavaScript();
+
+    code =
+      'var _client = new Client();\n' +
+      '\n' +
+      code;
+
+    console.log(code);
+  };
+
+  function _highlightBlock(id) {
+    workspace.highlightBlock(id);
+  }
+
+  document.getElementById("executeButton").onclick = async function() {
+    document.getElementById("executeButton").disabled = true;
+    _executionStopFlag = true;
+    await sleep(1);
+    _executionStopFlag = false;
+    document.getElementById("executeButton").disabled = false;
+
+    Blockly.JavaScript.STATEMENT_PREFIX = 'if (_executionStopFlag) return; _highlightBlock(%1);\n';
+    code = convertToJavaScript();
+    //console.log(code);
+
+    code =
+      '(async function() {\n' +
+      '  try {\n' +
+      'var _client = new Client();\n' +
+      '\n' +
+      '    var _timer = setInterval(async function() {\n' +
+      '      if (_executionStopFlag) {\n' +
+      '        clearInterval(_timer);\n' +
+      '        await _client.stop();\n' +
+      '        _highlightBlock("");\n' +
+      '        console.log("停止しました。");\n' +
+      '      }\n' +
+      '    }, 300);\n' +
+      '\n' +
+      code +
+      '\n' +
+      '  } catch (e) {\n' +
+      '    alert(e.message);\n' +
+      '  }\n' +
+      '})();\n';
+
+    eval(code);
+  };
+
+  var _executionStopFlag = false;
+
+  document.getElementById("stopButton").onclick = function() {
+    _executionStopFlag = true;
+  };
+
+  Blockly.JavaScript.addReservedWords('_executionStopFlag,_highlightBlock,_timer,_main');
+  Blockly.JavaScript.addReservedWords('Train,Point,ATS,Platform,Section');
+
+
+  clearFileSelection();
+
+  // ローカルストレージから復元する
+  var xml_text = '';
+  if (localStorage.getItem('atoBlocks')) {
+    xml_text = localStorage.getItem('atoBlocks');
+    var xml = Blockly.Xml.textToDom(xml_text);
+    workspace.clear();
+    Blockly.Xml.domToWorkspace(xml, workspace);
+  }
+
+  // ツールボックスが作り直されるたびに、ATSイベントハンドラの引数用に'列車'と'train'を変数として追加しておく
+  function addTrainVariables() {
+    if (!Blockly.Variables.nameUsedWithAnyType('列車', workspace)) {
+      workspace.createVariable('列車', 'Train');
+    }
+    if (!Blockly.Variables.nameUsedWithAnyType('train', workspace)) {
+      workspace.createVariable('train', 'Train');
+    }
+  }
+  addTrainVariables();
+
+  // ローカルストレージに自動保存
+  workspace.addChangeListener(function(event) {
+    var xml = Blockly.Xml.workspaceToDom(workspace);
+    var xml_text = Blockly.Xml.domToText(xml);
+    if (currentLoaded != null && currentLoaded != xml_text) {
+      clearFileSelection();
+    }
+    localStorage.setItem('atoBlocks', xml_text);
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,1850 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="factory_base" id="_qA2[3.x07sj?=bTwb~k" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_train_id</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="~[9o|m;L8i+~W2yL9.Qj">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="A[LA2F[18fl~jQV=vfI3">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="~9$#44-A=+tXzw32H^[B">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="H0CQw2@6Wnut$.=}ih37">
+                    <field name="TEXT">のIDに</field>
+                    <next>
+                      <block type="field_number" id="8Rp$#2Jb-X8Kj`5k3Zxe">
+                        <field name="VALUE">0</field>
+                        <field name="FIELDNAME">ID</field>
+                        <field name="MIN">0</field>
+                        <field name="MAX">Infinity</field>
+                        <field name="PRECISION">0</field>
+                        <next>
+                          <block type="field_static" id="lf!L:Zq+K_Z`2Su[c(+$">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="-u~bKX2Bo~iplw!iA9-8" deletable="false" movable="false">
+        <field name="TEXT">レイアウトでの列車のIDを調べてセットします。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="=pd$[)u5g42I)=w*O~@Q" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="QIzCip%m=W]#01OVZ2.%"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="]b4zYXL+Lt6glY,H5dij"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="x@^nksQ4-P=22]^5UA*A">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="f[XcMWc0Z_Um`8K.]$F]" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">start_train</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="k6X`[%8_.n/L[/QZ@.!!">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="pb]8t(%,49afX-.dV5hI">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="JAt:usjpsgvE][+imcC|">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="r.q2u2-hQ*O(N?~V~h-F">
+                    <field name="TEXT">を加速距離</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="iFE{_o(S%l#6aL#ltyKT">
+            <field name="INPUTNAME">DISTANCE</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="q4(Rta9Y)ADvk?/:{:rn"></shadow>
+              <block type="type_number" id="`u^hlWkZ=T~g4yxzk#{Y"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="=]b|]:]9@EOPlcsnRLT:">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="yR!e(t%#F{|U1e^9~.t,">
+                    <field name="TEXT">mmで発車</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id=")uv@^qz.DMiU;BclJ880" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="[#2GIuw/Gb8tp?:=P@$0" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="BVgt,ucRrv@4lNY^5mV$"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="#WUvIJf*rQq)BrB0;/%+"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="5O!:7x%9=9k`bmf73O|3">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="w]N5MD%c1z{M+E4+L!hU" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="NONE"></mutation>
+    <field name="NAME">main_function</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">NONE</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="s|%p1#U|tvJYQGH~]:nJ">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="=Nvme(mg01iC_,GF.i`?">
+            <field name="TEXT">アドレス</field>
+            <next>
+              <block type="field_input" id="1N:1AQvNs73Wa3li.?Cr">
+                <field name="TEXT">127.0.0.1</field>
+                <field name="FIELDNAME">ADDRESS</field>
+                <next>
+                  <block type="field_static" id="X_7qf?XoJ2|7zI9xp]]e">
+                    <field name="TEXT">に接続して実行</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_statement" id="UnV6]ju;1Ax*rO*RFBcv">
+            <field name="INPUTNAME">STATEMENTS</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="wmEJ)SOsr,qF5E]]T[e9"></shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="5n+7|)YoO8LPw847FmKm" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="X69H].`T$_)dCXEyw$~s" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="`W!YOPORE^XL_EhB?n|;">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Z%`/%}:MW?9Wyq5eF2p." deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">stop_train</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id=";yeL,Vt[rBGMxwm+;wns">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="RhXzH![UPy(hfga-4TXg">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="xFOC),-s6E(2WOgQOy3S">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="`%?H=Ye9qZLa-.6fpJ$)">
+                    <field name="TEXT">を減速距離</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="/vi#zrQTp_FVz97j|]LV">
+            <field name="INPUTNAME">DISTANCE</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="5Fx}if25.VrZVN#B,O7M"></shadow>
+              <block type="type_number" id="4@*k%D2D)$ahdM..R=kZ"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="=%=wEHSI*(L[=@%jwPov">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="%]Ty2;,Tl:p3jd[R]hX!">
+                    <field name="TEXT">mmで停車</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id=":@$+BOY7HHF^]=M/~mp@" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="g+0oNfBleO,KWn7JG5B|" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="1/;:rg_}*vG@b!7UGxs;"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="~sXLaVwDCoOvmx{I^/hS"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Y6_2sxH|awj}Wp6U@#{o">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id=":QKk}|XJ[66MTi$OSjfG" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">turn_train</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="c-,;p|i]Y2r#_@Nc;?^m">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="R3@q![j}MFKNGcLcRhSN">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="FDv5#j(O::E}zA[(gHh|">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="^N-]ytE_!0(q_#S+{7ab">
+                    <field name="TEXT">を反転</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="Q0DV9*0u.K~41w2|gqR}" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="ReZ9`;f?mrvUiQ/$~J!q" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="_=1({Xq:dcJ16NbVO[|6"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="z7K/:COv:`t9HmEz+)Jg"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="2Bb,*7^@t0O2^h]7vI=*">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="mUI95Zr/=j2Kd4M:DYId" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_ats_id</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="-Y{F28[g8(17[f)/#svx">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="uFX%yb,V/p^mehL|+/;V">
+            <field name="TEXT">ATS</field>
+            <next>
+              <block type="field_variable" id="5wQ{XxTnW%S]NoWlg?LZ">
+                <field name="TEXT">ats</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="mi.pol{gTpoAXMDgUqFr">
+                    <field name="TEXT">のIDに</field>
+                    <next>
+                      <block type="field_input" id=")`s(%/pZ-xTcHSOf2HKU">
+                        <field name="TEXT">0</field>
+                        <field name="FIELDNAME">ID</field>
+                        <next>
+                          <block type="field_static" id="*.,pnNDYW{3DO~zqtGcm">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="fx$|s}]zG96,CeOsw*Lv" deletable="false" movable="false">
+        <field name="TEXT">レイアウトでのATSのIDを調べてセットします。一か所に複数のATSを配置した場合、「80,90,100」のようにIDをカンマで繋ぎます。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=")sp]~;=?IsWWw350yW}~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="{:}V@SamDMR,|LtmOubr"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="OLPUDpqP]yI$H%=cJnl+"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="V4=Cn:CjPZ|8=%5i@?rA">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="B;4#OY#wDO=S:PMdS2EC" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">sleep_seconds</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="^fT}3dwra;:Q9oukydEC">
+        <field name="INPUTNAME">SECONDS</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id=";+kO:k~^m{v2%*zXi(X("></shadow>
+          <block type="type_number" id="*?KAXrR!OdD8GoBnPMmZ"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="I]+7JSIN]1,[}uAJfSRD">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="~sr?dd9FcX?y%JNh:H6=">
+                <field name="TEXT">秒待つ</field>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="U*B;ASCW1+s]?TPWLLf2" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="R+)4@nnqCUp1afY*EG~A" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="7zIghSu3,NE4P~kO8Qq)"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="JB8SbHIE!Z`^TK50%UE4"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="E$6ZGs^`gNuQ|J/}|q9*">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="~K3Ka/a7OGQpc+g=clHe" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_platform_atses</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="YQ#69.wn`O!=x:fB+Sh]">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="M.#L?!CxuDRIy|,K`Xyo">
+            <field name="TEXT">プラットホーム</field>
+            <next>
+              <block type="field_variable" id="@cPbydNkSMv$i}H/PW41">
+                <field name="TEXT">platform</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="=26?Ap#*-|[WLN.0S9|S">
+                    <field name="TEXT">の両端にATS</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="!ea6Ir}j}lyPb3`+}RWS">
+            <field name="INPUTNAME">ATSIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="j?Fl.j#zxPTR=S,$i(R("></shadow>
+              <block type="type_other" id="GVzsIJGEfz|UoZ}GXLsR">
+                <field name="TYPE">ATS</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="+QEB$;ej}]{DpJA*OB=B">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="_2?@+a6,_Ka7`ws(]I]X">
+                    <field name="TEXT">とATS</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_value" id="!9qq3d]YcypzoDW_Z%s}">
+                    <field name="INPUTNAME">ATSOUT</field>
+                    <field name="ALIGN">LEFT</field>
+                    <value name="TYPE">
+                      <shadow type="type_null"></shadow>
+                      <block type="type_other" id="/@N|s7[RaCvmJ~Eswx9P">
+                        <field name="TYPE">ATS</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="input_dummy" id="`-i%wy8rK{(B!Wv*ccd8">
+                        <field name="ALIGN">LEFT</field>
+                        <statement name="FIELDS">
+                          <block type="field_static" id="hcFO3mGDEQ~mLqOE+X)~">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="jxp7Xo$iM]Q@T]FGM(84" deletable="false" movable="false">
+        <field name="TEXT">ATSをセットすると列車を自動で停車させます。片方のみ指定した場合、停止後進行方向を自動で反転します。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="Wf}Pk|I)d6?nQb9CvMXm" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="]ULL$;QoxFe2JN/]Uj:v"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="KDsUcS8dpXFC#B0xd(-u"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="5~E5R%YEzHV,TU_!Jr^o">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="quEm`9hw:owp|9~F^MnE" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_platform_restart</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="}-7iA|W1M_S`%L!s4rg|">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="B]}Ovks[DaS;sOArrNq1">
+            <field name="TEXT">プラットホーム</field>
+            <next>
+              <block type="field_variable" id="(l:31hPtKRmm%FXRA8/)">
+                <field name="TEXT">platform</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="BN|Aa4};7pIsoV56ejm#">
+                    <field name="TEXT">の停車時間に</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="9XjOcMJ^{v^ZViu8gdoL">
+            <field name="INPUTNAME">SECONDS</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="syhk8R#PpyS2v6F`*PBx"></shadow>
+              <block type="type_number" id=")E/!S)@iLgA6yH;,gGX5"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="8KNiKrM%cg7(l|?8#hXN">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="~W,fvkCe}JV-W}{*xcav">
+                    <field name="TEXT">秒をセット</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="7LD#Qi%]Rh}`,!0j@`0n" deletable="false" movable="false">
+        <field name="TEXT">停車時間を指定しない場合、停車したままになります。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="5@]Bbw.*?p)IYH6x_)hx" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="Uno$teEvTx1-+(mn}pz$"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="G+EeSr=yjCbUKQutHDaj"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=";;[*x.4zklmuL`5|[Hbi">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="[/]xc+3~1TAxK?e?o@!+" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_platform_train</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="+S8}RcRKP--Z}@Xc`0yZ">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="wcMS::ll`tO:fy9)vuSF">
+            <field name="TEXT">プラットホーム</field>
+            <next>
+              <block type="field_variable" id="9swG{;{rcV/.xnt_}2o7">
+                <field name="TEXT">platform</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="=+CKvqW#PSe:7A)Z|!XF">
+                    <field name="TEXT">の初期状態に列車</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="qD-EY,QLqlt%-0Vve,BS">
+            <field name="INPUTNAME">TRAIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="ClpW@{[B}%jULC+JL}pw"></shadow>
+              <block type="type_other" id="uh~=xf.;#foWH),Y]NVv">
+                <field name="TYPE">Train</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="EV/NFVcJ`QYly;ZXP{rS">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="BHbSrRCikiy:(qTL9wYN">
+                    <field name="TEXT">をセット</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="Pvj6iStSLxOl^@pbiW)}" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="KN{7ox?qczM:u7_z9Z(X" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="N*]b$yNhen}=)qPM][.0"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="W`Sj;5{eaY3zeHPL!eaS"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="^|p`rrJ+dencZaYTrM7n">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id=",qV^x9VCmxNC{zjs=6tI" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_point_id</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="?e0|}Qfi,.guUJAg[Pz{">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="g-)FPaZ8!J@I7?#Nqh~/">
+            <field name="TEXT">ポイント</field>
+            <next>
+              <block type="field_variable" id=";yVE3[=%Ss|ML[osML-j">
+                <field name="TEXT">point</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="!]zZg$|7li1!S/e`tg3h">
+                    <field name="TEXT">のIDに</field>
+                    <next>
+                      <block type="field_number" id="@)Pbbb78D*Hfrv-)`7yE">
+                        <field name="VALUE">0</field>
+                        <field name="FIELDNAME">ID</field>
+                        <field name="MIN">0</field>
+                        <field name="MAX">Infinity</field>
+                        <field name="PRECISION">0</field>
+                        <next>
+                          <block type="field_static" id="q#Cm`3_#)h5br@_80:~b">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="[|YN;~#N:{DH]QcZ5,4b" deletable="false" movable="false">
+        <field name="TEXT">レイアウトでのポイントのIDを調べてセットします。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=",EK1$|(.xB^x)K70YxS." deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="4/s42Lk#U$*v4UI{U)3Y"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="sOF|TluI^Z]0jJXc1%fp"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="no;|:ZFt|al#4QoQO3`N">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Ig.{7?#B;y_O#4DK*+w]" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_section_train</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="#BJ?7W284@9(Vg[#xhi;">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="zxYv|[iCHo-6XUhmr]a=">
+            <field name="TEXT">閉塞区間</field>
+            <next>
+              <block type="field_variable" id="^~G]/5$,]kRz5G.{5nPs">
+                <field name="TEXT">section</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="DQ/Wg#(|`=Fq?vG?_jv#">
+                    <field name="TEXT">の初期状態に列車</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="JzdM.zar:D48mf3t((kz">
+            <field name="INPUTNAME">TRAIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="YL)XPE3m9l-U67uhVt2+"></shadow>
+              <block type="type_other" id="/(vm-5RfB);oLw0DsrQ#">
+                <field name="TYPE">Train</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="l?da.|_4P[h`+3I{#rTs">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="=|2[q5mJnuF:D3O4*.Lw">
+                    <field name="TEXT">をセット</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="Pfo@5VW:0u:eo#~QadkW" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="ux)7Z8=s]Rbbe31(l_|0" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="!]}%5|v2S)@[W;BBv2~4"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="LhO9Vi3U6$iCYY1!^9Y?"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="8qov)fP9r0X9zj[mA#Y@">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="BDN{x#lC}q{eH{-in_);" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_section_atses</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="r=EMGZ~u@%5_bGP~o-a?">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="5*/{puh^5y+3};g}hIQ4">
+            <field name="TEXT">閉塞区間</field>
+            <next>
+              <block type="field_variable" id=")wDuUd0F1C02f^=x`cU)">
+                <field name="TEXT">section</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="la8D4x8xb*5W#72,bo8K">
+                    <field name="TEXT">の両端にATS</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="V@M+|tJyc26I%08H`E[4">
+            <field name="INPUTNAME">ATSIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="HT.VVdqeAe|G-{7eyj!L"></shadow>
+              <block type="type_list" id="-ln]DQdY)b+8mW85KRe/"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="RvNK~fqtoJXzPN(S.;M.">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="6(029[BiVGAn;D21v^)e">
+                    <field name="TEXT">とATS</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_value" id="~I@mk|eVGlI|o?^~HzuZ">
+                    <field name="INPUTNAME">ATSOUT</field>
+                    <field name="ALIGN">LEFT</field>
+                    <value name="TYPE">
+                      <shadow type="type_null"></shadow>
+                      <block type="type_list" id="W-iAnh5,%I!vrNQ$~5uZ"></block>
+                    </value>
+                    <next>
+                      <block type="input_dummy" id="2bk!mF.zp~2fSqY,xGIN">
+                        <field name="ALIGN">LEFT</field>
+                        <statement name="FIELDS">
+                          <block type="field_static" id="fKU__+GCzPJ9+_^xR~mh">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="1rQsACTBL0m)gVwq@3iK" deletable="false" movable="false">
+        <field name="TEXT">ATSをセットすると「列車を入れる」「列車を出す」を自動で実行します。それぞれ複数のATSをセットできます。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="/}kCaiZ9fuN`j:Zt?~va" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="0n.J5$%c4ESC,Z,Um[E/"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="nF;#taG3m(qsy0,J-vAq"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=")Z5g9J~-YCFn}jy^G8),">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="G=,m)QQ1_HP]h%_4Dl[!" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">enter_section</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="WL!NvEbkob.7.#aAq1A*">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="|D.O0Om=JmSL^-8Q{ViU">
+            <field name="TEXT">閉塞区間</field>
+            <next>
+              <block type="field_variable" id="0o/{jdD_z{6So$KUubXa">
+                <field name="TEXT">section</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="HP0}Tjl]`vSjZmw1YQ=#">
+                    <field name="TEXT">に列車</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="0wx7w{ryfR;%P|(omYXD">
+            <field name="INPUTNAME">TRAIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="T.HP).HTSajm4FvJ2qZe"></shadow>
+              <block type="type_other" id="#,Angou:d,YFy2HQJGcW">
+                <field name="TYPE">Train</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id=";mdRr71MvC-v-PCidlB0">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="6}Vi20MCB-D:BqiIC*,-">
+                    <field name="TEXT">を入れる</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="DUQX@1Oe{B~K2oA-0C1p" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="o(h-q{v`}{cI!rwb2quJ" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="jNeQH.tqGn;C5=%fXdv."></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Ca}uPC!wo3)[sVzGrLH!"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="x;.vo8d;@L$s)*%N9DUe">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="~k]4jT3M/Nm4^#cm4n.(" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">leave_section</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="GGf(n~2ow]6|jL)^;bU(">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id=".vFx*LfZxP#~J~[YChxS">
+            <field name="TEXT">閉塞区間</field>
+            <next>
+              <block type="field_variable" id="C+-iyyKJ!mp^eFP5h(2x">
+                <field name="TEXT">section</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id=")!;9Nozf[%ryEtwL5d6p">
+                    <field name="TEXT">から列車</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="9_7{28U6w)u?$PzGl|rm">
+            <field name="INPUTNAME">TRAIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="@G9:7w+rKC}EpmS]NQXY"></shadow>
+              <block type="type_other" id="mv69M5?##DoYXTwBylJw">
+                <field name="TYPE">Train</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="~Kx==hHtA}ig*Q5H|fG8">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="*nv_9a9SzlIWWjy!QkPX">
+                    <field name="TEXT">を出す</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="crwzc1TP(qK6|hS52YED" deletable="false" movable="false">
+        <field name="TEXT">列車の指定を省略できます。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="hOgKe16~O=e,7^X,6qlU" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="snWwRhbdKO*L$]?PDZI."></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="eHxc39:ln|YUGzcfTBTd"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="XCqiJ_tp}bTW(00(H#[4">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="=5m-n%xuGTOOoj0/w~FQ" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">start_platform</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="h9uSb=g~#6dAR)H@6ca4">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="et55=(5ZHn,~/pNj2Sae">
+            <field name="TEXT">プラットホーム</field>
+            <next>
+              <block type="field_variable" id="?r;V53Pdk58*UN%1MK$9">
+                <field name="TEXT">platform</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="~Eo/%r8DqsRHa]0h~lOZ">
+                    <field name="TEXT">から列車</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="9T{G{[k8?*,a:^uE5x)N">
+            <field name="INPUTNAME">TRAIN</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="H?HBxd{m%{Ky?eyfr9cc"></shadow>
+              <block type="type_other" id="EM;Q2gZ8k~Yg,3Xr[4Ru">
+                <field name="TYPE">Train</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="#Zvm7P.%!C2~BqTg0oK6">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="%0y3w`8u`J5QPX|()F|v">
+                    <field name="TEXT">を発車</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id=",rE9G}u0n.j(UG}0G-~a" deletable="false" movable="false">
+        <field name="TEXT">列車の指定を省略できます。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="+dSLZ!zrzR{(@dtM]k*R" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="w/IALQMv+~n]86OPuBVo"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="lpj)a/w@hO;#Iw]noBPD"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="I=b2`m4h2pgj%yFf:/lO">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="%:n|,EJ5A@fH~pVfl~Vy" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_platform_codes</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="?cW1pD1ikp:EI7^t:_!6">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="_!~_ybW~4W@nQ)aB%FtU">
+            <field name="TEXT">プラットホーム</field>
+            <next>
+              <block type="field_variable" id="(}^yDW7[j3+n;uU:*~M!">
+                <field name="TEXT">platform</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="tC2ArQOZ4PKyvH0{C%sN">
+                    <field name="TEXT">の種別コードリストに</field>
+                    <next>
+                      <block type="field_input" id="?vRo][2I_4f~:jT1t3;U">
+                        <field name="TEXT">0,1,2,3,4,5,6,7</field>
+                        <field name="FIELDNAME">CODES</field>
+                        <next>
+                          <block type="field_static" id="6bvtPTAT^mYEzNe=aPC?">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d|Gv$a[eB86+0KQ6qQ!2" deletable="false" movable="false">
+        <field name="TEXT">停車させる列車の種別コードをカンマで繋いで指定します。何も指定しない場合、すべての列車を停止させます。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="x}X{S+!{T14EI{1^rdWR" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="u:90)MjDv1oY|X[bhH3V"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="VOX4z$`at{Y/+=*]fxV_"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Gxn?I+7YK]cjWKjPh,l=">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Tdgj/Kzb:T3WuWo,##2Z" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_section_name</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="f`Cr5M^gA;p~2}MtkEg0">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="!2rA_2jae{KHZNKYp;B|">
+            <field name="TEXT">閉塞区間</field>
+            <next>
+              <block type="field_variable" id="7J5|vb53ZIAM_-B:l5kP">
+                <field name="TEXT">section</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="Ba9p5?VMVm5o8;?h92)]">
+                    <field name="TEXT">のログ名称に</field>
+                    <next>
+                      <block type="field_input" id=".dU7ksNhE-r3$+k!gXgN">
+                        <field name="TEXT">section</field>
+                        <field name="FIELDNAME">LOGNAME</field>
+                        <next>
+                          <block type="field_static" id="NR~XM(#Nem{YA+}#,uwW">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="^}NRYC_{JkE2{gY+I`I#" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="AX6eotb^%).V2}c|TSv*" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="@shAoi%p-Os.TI]_59*B"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="U$!}SsP,vJN??nLZy4vg"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="50jq48T7~4u:,_*j[qBl">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Tdgj/Kzb:T3WuWo,##2Z" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">enable_section_log</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="f`Cr5M^gA;p~2}MtkEg0">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="!2rA_2jae{KHZNKYp;B|">
+            <field name="TEXT">閉塞区間</field>
+            <next>
+              <block type="field_variable" id="7J5|vb53ZIAM_-B:l5kP">
+                <field name="TEXT">section</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="Ba9p5?VMVm5o8;?h92)]">
+                    <field name="TEXT">をログに出力</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="^}NRYC_{JkE2{gY+I`I#" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="AX6eotb^%).V2}c|TSv*" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="@shAoi%p-Os.TI]_59*B"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="U$!}SsP,vJN??nLZy4vg"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="50jq48T7~4u:,_*j[qBl">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="3R)SEp7m=:r#-12:c)L4" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">get_train_direction</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="~)Ri#BoI[Od%:(TY1nv[">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="{r+$?ommNDhA?c1baYjt">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="y|k!5$H)v5=WYkNDG9/}">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="Jd^7di]s,fc:71=8^yEW">
+                    <field name="TEXT">の進行方向</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="HCB~ANf_5Sed_~!VmaLj" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="E}=8=^({DZ;;A)9;L:7X" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="1q:gs0aAf9^l.PssyQK,"></shadow>
+      <block type="type_number" id="W--m5D#)icIIC9a2cH3I"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="R5K%Z*|O?40nNmZ:([vh">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="+)~j?**lIq_ffsm|;M]X" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">get_point_branch</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="X$pU5lgC#F]RbCC6e0jW">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="FGT!u`kD+bgxd#hUL9Ek">
+            <field name="TEXT">ポイント</field>
+            <next>
+              <block type="field_variable" id="KBi8jD83(%j`W8LT@2]p">
+                <field name="TEXT">point</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id=":d?!O|l!XW815`_M~Zi,">
+                    <field name="TEXT">の分岐状態(0で直進)</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="V!H]+5?t5P1iqWBizcX+" deletable="false" movable="false">
+        <field name="TEXT">２分岐ポイントの場合、０で直進、１で分岐です。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="aU^oz9|Ltp.UNa5j=s1(" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="iu~3*T9U?3-p==n#%kH:"></shadow>
+      <block type="type_number" id="k$`i+%,v=4/iOvGpI644"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="M0=*|N[+v]H$kV{{zvl]">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="H-IlRC3U[iiAW@b2!r5Q" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">switch_point_branch</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="fC9%+e!mFJdFBYmdMS!]">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="S_s_qY/X7p8*%KcU40dU">
+            <field name="TEXT">ポイント</field>
+            <next>
+              <block type="field_variable" id="i7^$vg.wQG-s6-OIQ@ab">
+                <field name="TEXT">point</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="0_IMK!zuj{@xRA;^:E7f">
+                    <field name="TEXT">の分岐状態(0で直進)を順次切り替え</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="RG,Y0s!l+!88FUoA`f6u" deletable="false" movable="false">
+        <field name="TEXT">２分岐ポイントの場合、０で直進、１で分岐です。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="oV4MGgb|Ux2N/VF_ZL3i" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="|2K!pdDX7egQ*?Fk(T9p"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="e_YV|X,5mP*hIgh04|s*"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="@2XHDFcC)wlRR*zix*o}">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Co3+o|2oN?lSf^~*tSm`" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_point_branch</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="$N]K3(SD13f4W2=~j**~">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="}4a?(Um2.kmOfh3KW%u#">
+            <field name="TEXT">ポイント</field>
+            <next>
+              <block type="field_variable" id="yzI]dnLUVE[n*Vtuj{42">
+                <field name="TEXT">point</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="T(m{vRhLt@)M@9FL@iEk">
+                    <field name="TEXT">の分岐状態(0で直進)に</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="CM2BX[aCS_[*w;y$IJ:2">
+            <field name="INPUTNAME">BRANCH</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="-jw6nhv6@ajHBzMAq@LZ"></shadow>
+              <block type="type_number" id="/6QaW4Eu2[_h%D`~KY2*"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="YLg*u*@]DzXvXF(2G*Bo">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="E5?OR7)[:bbJ|yA3t7cY">
+                    <field name="TEXT">をセット</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="dJB4|J~wJjA[IfpRmF^j" deletable="false" movable="false">
+        <field name="TEXT">２分岐ポイントの場合、０で直進、１で分岐です。</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="|=Y!U/T^;Nd`3womz5B+" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="JZbT0N:%+[5v@qq|%c=o"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="kyP((vz84).ek.Laj/Gf"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Y=w`)h4OLu#D,#XhSE*H">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="|#Wb)bt|)*3K=AQp@eaJ" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_train_code</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="sXDUyPg42OZw~X7vKac1">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="3){d_VXmUN)Es~5jd696">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="}vxC|_5`!Zb;ciq*.s6h">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="jyen@5_Nczd)!*s%^[-u">
+                    <field name="TEXT">の種別コード(0～7)に</field>
+                    <next>
+                      <block type="field_number" id="bZOFw{yOupbE28.3LFvl">
+                        <field name="VALUE">0</field>
+                        <field name="FIELDNAME">CODE</field>
+                        <field name="MIN">0</field>
+                        <field name="MAX">7</field>
+                        <field name="PRECISION">0</field>
+                        <next>
+                          <block type="field_static" id="KO!Y08FQBPbyQwNZC8,/">
+                            <field name="TEXT">をセット</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="(shte*|xu*iT9D1XpxX|" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="Q)=Q/j+%u)o1Uqr*!^5H" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="k:-lU+uN3rmDHa!Y1by$"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Z#e-Kpz2KdI8zLFK9P]]"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="EDIMjnRzG4!#7`x1Q8GB">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="h{-5Bq)FrWrCLm)~94r=" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_train_number</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="@H.5mGTcdACR7h.x9|;}">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="!7f/P+23yBv.cr}@ETAQ">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="%EY1YZFd$}Di$0[HK=k8">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="uOEq,{v(-MheVZ?85,V%">
+                    <field name="TEXT">の列車番号を</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="QWWY-fc48O*]0(Vl=]wG">
+            <field name="INPUTNAME">NUMBER</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="?kfb:SlS/#-`mRLn@x7k"></shadow>
+              <block type="type_string" id="scuJxLDNAm.yse@!Excc"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="Up6?AMKRd$/*r,TJNA|{">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="E_S.)=et8R}M}|?gLg$9">
+                    <field name="TEXT">にセット</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="n3_V~hwtc7o.K3Xd$`OJ" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="P.F7D%gUsK{cI5(0^b3#" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="2C(hkUc8l[d^nb24s~gj"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Bw3.Hv,#P[3dm!EjTwQ="></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="]{2VzJHfg}}pnAvo8Y`U">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="z@7*KM`T`u2g-aM*RaX`" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">get_train_code</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="d$[Ck--$c{q0!G!wp:sl">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="${)lHz`h{G+Ug7q%*jE8">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="f1O[uN!|)EGC-m!TI$iK">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="}{^0{@!/ky#|2^eWJ2LN">
+                    <field name="TEXT">の種別コード(0～7)</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="$4cG0Nk(ygV{|y7c:7Xb" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="GfY75gLmet^C$J?6|EAj" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="#6#C~rx[,#FQaXMb;r/6"></shadow>
+      <block type="type_number" id="zap1tMbyM]s[=fEL4#QO"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="k@,:^EJM%5i{(}vzAD1$">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="jRdHrqSZL~JUzP^#@oZu" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">get_train_number</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="*^CWuu-l[h4},|f[6#O+">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="GM!6]R6yO,n@W?o,7Mn@">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="x9Tf#-_d|_PQVH==UTd2">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="JP4WK]b76tgRI_7E(Tv@">
+                    <field name="TEXT">の列車番号</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="DO/Rye;b7Ui[Yrb.iL*}" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="d7A;Ad!Y+$XIj]LTF}Vc" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="sgGY}W?_k@6!52GDU^Ua"></shadow>
+      <block type="type_string" id="G*F=41hx%u:3$Q634`@0"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="UjpQ%9s]:3D#:E{$mzA7">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="){uDb``6#fy^~OCop:=m" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">set_train_traveling_voltage</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="CXW;v8(T0c()QSxc2v6]">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Au)|DWmh=r.a:{?#|w4r">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="x==+M:5(=+b`2w#aT3OL">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="BQ1/ZzCws`j~6dj-ke]h">
+                    <field name="TEXT">の走行時の電圧(0.0～1.0)に</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="OV+g%0OaE}n%k#7!$1XG">
+            <field name="INPUTNAME">VOLTAGE</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="$:J`7F$40D}-VH%7:ndb"></shadow>
+              <block type="type_number" id=")xI[zOumd$E4glBm,[`/"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="nh.Nm2*MO81E!Ds=nJY2">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="q;OIzOX%J)Y6JwLyhy|}">
+                    <field name="TEXT">をセット</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="j=MVwSz~$SRgs}.[#lY~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="*[9^RP,f;afZX7?]o}^4" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="y33gdRtbz7N9zm[-BXS1"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="+Cq6vByl4+YCyjSp(-XR"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="_(g!U^9CiAXR(4Ig)1TR">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="[ivJ35ZA1}PG+_F/~*KL" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">get_train_voltage</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="Jv/x4$9r58O,9{2Z)jb}">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="yiiW*p{9i58CnAUPj^:d">
+            <field name="TEXT">列車</field>
+            <next>
+              <block type="field_variable" id="kz_:p7=uX|pKr`u4jK92">
+                <field name="TEXT">train</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id=":/yTWUk|PRQjGz[g!LEC">
+                    <field name="TEXT">の現在の電圧(0.0～1.0)</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="`KKGlDKxq,E#pwR!gIzV" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=".G.)V4E|{r=ddXT`h1Nb" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="rs.egOallgzrgV%fVDMd"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="+][ytF)C8A!,}*Kj8~-Q">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="`3T_pHIu#,Q)PE9(F?b^" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="NONE"></mutation>
+    <field name="NAME">catch_event_handler</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">NONE</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="Dr^~kc1KFV;gPpHPK2bx">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="qm.!Rv$JjC*8sPw)#:EO">
+            <field name="TEXT">ATS</field>
+            <next>
+              <block type="field_variable" id="z.GkArY|@tddn6eo4lnU">
+                <field name="TEXT">ats</field>
+                <field name="FIELDNAME">VAR</field>
+                <next>
+                  <block type="field_static" id="^954G8kRRh/)X?U1)$M~">
+                    <field name="TEXT">が</field>
+                    <next>
+                      <block type="field_dropdown" id="~YVs{oq}5g@QQhI,~Z9u">
+                        <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                        <field name="FIELDNAME">DIRECTION</field>
+                        <field name="USER0">順方向</field>
+                        <field name="CPU0">FORWARD</field>
+                        <field name="USER1">逆方向</field>
+                        <field name="CPU1">REVERSE</field>
+                        <next>
+                          <block type="field_static" id="l)Aw$AT3#u/ZIc9V8c%[">
+                            <field name="TEXT">の列車を検出したとき実行</field>
+                            <next>
+                              <block type="field_static" id="1^:E6%.s=)Ye-wcwY?cU">
+                                <field name="TEXT">　引数：</field>
+                                <next>
+                                  <block type="field_variable" id="!2wg^[Prjm[n^z4)oY_J">
+                                    <field name="TEXT">列車</field>
+                                    <field name="FIELDNAME">TRAIN</field>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_statement" id="45MSf9Jns^y4{z?YR,+p">
+            <field name="INPUTNAME">STATEMENTS</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id=".btPo5O+P]8DK2kn$0G%"></shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="GM=w*{gv#7TpVB6F`h7Y" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="])|naptf1Mh9-(QTGX}Y" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="7l^{1kD#lzR4X:~6g75{">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block></xml>
