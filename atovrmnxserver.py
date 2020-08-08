@@ -175,7 +175,7 @@ def process_layout_event(obj, ev, param):
                     except Exception as e:
                         vrmapi.LOG(f'execvrmapi("{command}"): {e}')
 
-                    if response:
+                    if response is not None:
                         #vrmapi.LOG(f'response:{response}')
                         try:
                             _clientcommandstream.write(f'{response}\n')
