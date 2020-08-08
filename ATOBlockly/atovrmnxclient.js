@@ -82,6 +82,9 @@ class Client {
 		await this._openCommandSocket();
 		await this._openEventSocket();
 
+		// 接続確認
+		await this.sendQuery('GetID()');
+
 		// 登録済みのATSオブジェクトに対応するサーバー側のVRMATSオブジェクトを
 		// イベント送信可能にする
 		for (let key in this._atsDict) {
@@ -345,6 +348,9 @@ class Client {
 			self._commandSocket.onclose = function(e) {
 				//console.log('command socket closed');
 			};
+			self._commandSocket.onerror = function(e) {
+				alert('接続に失敗しました。');
+			};
 		});
 	}
 
@@ -360,6 +366,9 @@ class Client {
 			};
 			self._eventSocket.onclose = async function(e) {
 				//console.log('event socket closed');
+			};
+			self._eventSocket.onerror = function(e) {
+				alert('接続に失敗しました。');
 			};
 		});
 	}
